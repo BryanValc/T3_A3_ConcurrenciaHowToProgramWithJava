@@ -18,7 +18,7 @@ public class SynchronizedBuffer implements Buffer{
 	}
 
 	@Override
-	public int blockingGet() throws InterruptedException {
+	public synchronized int blockingGet() throws InterruptedException {
 		while (!occupied) {
 			System.out.println("Consumer tries to read.");
 			displayState("Buffer empty. Consumer waits.");
